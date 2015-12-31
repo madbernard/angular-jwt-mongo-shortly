@@ -1,3 +1,9 @@
 <div id='container'>
-  <!-- Your html here -->
+  <h2>Pre-shortened Links Below!</h2>
+  <a href="/#/shorten">Shorten a link!</a>
+  <ul>
+    <li ng-repeat="displayedLink in data.links">
+      {{ displayedLink.url }}<br>{{ displayedLink.title }}<br>{{ displayedLink.code }}<br>{{ displayedLink.visits }}
+    </li>
+  </ul>
 </div>

@@ -12,10 +12,24 @@ angular.module('shortly.services', [])
       return response.data;
     });
   };
+  var addLink = function(){
+    console.log(link, 'pre-promise, the link from addLink =================');
+
+    return $http({
+      method  : 'POST',
+      url     : '/api/links',
+      data    : link
+    }).then(function(response){
+      console.log(response, 'the response from addLink =================');
+      return response.data;
+    });
+  };
+
   return {
     data    : data,
     getLinks: getLinks,
-    link    : link
+    link    : link,
+    addLink : addLink
   };
 })
 .factory('Auth', function ($http, $location, $window) {
