@@ -3,7 +3,10 @@
   <a href="/#/shorten">Shorten a link!</a>
   <ul>
     <li ng-repeat="displayedLink in data.links">
-      {{ displayedLink.url }}<br>{{ displayedLink.title }}<br>{{ displayedLink.code }}<br>{{ displayedLink.visits }}
+      {{ displayedLink.url }}<br>
+      {{ displayedLink.title }}<br>
+      {{ displayedLink.base_url }}/{{ displayedLink.code }}<br>
+      {{ displayedLink.visits | orderBy: displayedLink.visits }}
     </li>
   </ul>
 </div>
