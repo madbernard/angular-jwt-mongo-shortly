@@ -5,6 +5,8 @@ var Link    = require('./linkModel.js'),
 
 module.exports = {
   findUrl: function (req, res, next, code) {
+    console.log(req.body, "this is findURL ======== req.body from linkcontroller.js");
+
     var findLink = Q.nbind(Link.findOne, Link);
     findLink({code: code})
       .then(function (link) {
@@ -34,7 +36,6 @@ module.exports = {
 
   newLink: function (req, res, next) {
     var url = req.body.url;
-    console.log(req.body, "rew.body from lincontroller.js");
     if (!util.isValidUrl(url)) {
       return next(new Error('Not a valid url'));
     }
@@ -72,6 +73,8 @@ module.exports = {
   },
 
   navToLink: function (req, res, next) {
+    console.log(req.body, "this is navToLink ======== req.body from linkcontroller.js");
+
     var link = req.navLink;
     link.visits++;
     link.save(function (err, savedLink) {

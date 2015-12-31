@@ -5,8 +5,9 @@
     <li ng-repeat="displayedLink in data.links">
       {{ displayedLink.url }}<br>
       {{ displayedLink.title }}<br>
-      {{ displayedLink.base_url }}/{{ displayedLink.code }}<br>
-      {{ displayedLink.visits | orderBy: displayedLink.visits }}
+      <a href="{{ displayedLink.base_url }}/api/links/{{ displayedLink.code }}">{{ displayedLink.base_url }}/{{ displayedLink.code }}</a><br>
+      {{ displayedLink.visits | orderBy: visits }}
+      <!-- {{ displayedLink.visits | orderBy: displayedLink.visits }} -->
     </li>
   </ul>
 </div>
