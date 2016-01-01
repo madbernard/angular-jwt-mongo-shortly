@@ -17,10 +17,12 @@ angular.module('shortly', [
     })
     // Your code here
     .when('/links', {
+      authenticate: true,
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
     })
     .when('/shorten', {
+      authenticate: true,
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
     })
@@ -57,6 +59,7 @@ angular.module('shortly', [
   // and send that token to the server to see if it is a real user or hasn't expired
   // if it's not valid, we then redirect back to signin/signup
   $rootScope.$on('$routeChangeStart', function (evt, next, current) {
+    console.log(next, 'this is next from the routechange fn');
     if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
       $location.path('/signin');
     }

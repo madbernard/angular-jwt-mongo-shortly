@@ -1,4 +1,5 @@
 <div id='container'>
+  <button ng-click='signout()'>Log out</button>
   <form name="shortenALink" ng-submit='addLink(shortenALink.$valid)' novalidate>
     <input type='url' name='url' ng-model='link.url'>
     <p ng-show="shortenALink.url.$invalid && shortenALink.url.$touched" class="help-block">Url needs to have http://</p>

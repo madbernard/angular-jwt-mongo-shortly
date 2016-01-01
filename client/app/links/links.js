@@ -1,9 +1,9 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, Links, Auth) {
   angular.extend($scope, Links);
   $scope.getLinks().then(function(fetchedLinks){
     $scope.data.links = fetchedLinks;
-    console.log(fetchedLinks, 'links fetched in links.js?');
+    $scope.signout = Auth.signout;
   });
 });
