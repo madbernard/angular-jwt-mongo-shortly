@@ -6,4 +6,12 @@ angular.module('shortly.links', [])
     $scope.data.links = fetchedLinks;
     $scope.signout = Auth.signout;
   });
+})
+
+.directive('alert', function() {
+  return function(scope, el, attr) {
+    el.on('click', function() {
+      alert('ALERT!');
+    });
+  };
 });

@@ -4,7 +4,7 @@
   <button ng-click='signout()'>Log out</button>
   <input type="text" ng-model="search" placeholder="search">
   <ul>
-    <li ng-repeat="displayedLink in data.links | orderBy: '-visits' | filter: search">
+    <li ng-repeat="displayedLink in data.links | orderBy: '-visits' | filter: search" alert>
       {{ displayedLink.url }}<br>
       {{ displayedLink.title }}<br>
       <a href="{{ displayedLink.base_url }}/api/links/{{ displayedLink.code }}">{{ displayedLink.base_url }}/{{ displayedLink.code }}</a><br>
